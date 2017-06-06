@@ -1,0 +1,21 @@
+sudo yum install -y
+
+yum install httpd -y
+
+service httpd start
+
+chkconfig httpd on
+
+cd /var/www/html
+
+
+Security Grous are Stateful(Once u specify Inbound the same is applied to Outbound)
+
+lsblk---list all volumes attached
+
+file -s /dev/xvdf -----Check whether the Volume is having data or not
+
+mkfs -t ext4  /dev/xvdf ----------(Format the file system)
+
+mount /dev/xvdf  /fileserver-------(Mount Volume)
+umount /dev/xvdf
