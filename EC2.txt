@@ -19,3 +19,8 @@ mkfs -t ext4  /dev/xvdf ----------(Format the file system)
 
 mount /dev/xvdf  /fileserver-------(Mount Volume)
 umount /dev/xvdf
+
+################      AMI
+AMI's are backed by either EBS or Instance Store.
+Instance Store Volumes are Ephemeral Storage.(These cannot be Stopped in 
+the console
