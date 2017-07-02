@@ -15,12 +15,33 @@ lsblk---list all volumes attached
 
 file -s /dev/xvdf -----Check whether the Volume is having data or not
 
+###Creating File System
 mkfs -t ext4  /dev/xvdf ----------(Format the file system)
 
+# Creating a Folder 'fileserver' and Mounting
 mount /dev/xvdf  /fileserver-------(Mount Volume)
+
+# Unmounting a Volume
 umount /dev/xvdf
 
-################      AMI
+################      AMI      ##############################
 AMI's are backed by either EBS or Instance Store.
 Instance Store Volumes are Ephemeral Storage.(These cannot be Stopped in 
 the console
+
+##Configure Credentials using aws commandline
+## Secutiy Riskm if u save credentials on Ec2 Instance
+aws configure
+###Then Provide Security Key and ID and Region Name
+
+##Terminate an AWS EC2 Instance
+aws ec2 terminate-instances  --instance-ids  INSTANCEID
+
+##Copying files from S3 to Ec2
+aws s3 cp s3://newbucketsample/index.html /Destination Path/
+
+## To know the Metadata(Instance details,IP's,iam,host)
+curl http://169.254.169.254/latest/meta-data/
+
+
+
